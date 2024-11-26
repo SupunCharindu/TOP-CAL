@@ -1,0 +1,81 @@
+*{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+.cal{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container{
+    background-color: black;
+    border: 10px solid rgba(0, 0, 0, 0.361);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(4 , 100px);
+    grid-template-rows: minmax(80px,100px) repeat(6, 80px) ;
+    /* box-shadow: 20px 20px rgba(20, 0, 0, 0.3px); */
+    gap: 5px;
+}
+
+.heading{
+    font-family: 'Times New Roman', Times, serif;
+    /* grid-area: 1/1/-9/5; */
+    grid-column: 1/ 5;
+    font-size: 40px;
+    text-align: center;
+    color: rgba(221, 190, 88, 0.937);
+    
+}
+
+#display{
+    grid-column: 1 /-1;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 5px;
+    font-size: 40px;
+    font-weight: initial;
+    text-shadow: 1.3px 1.3px #383838;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+    border-radius: 5px;
+    border: none;
+    font-size: 25px;
+    color: #fff;
+    background-color: #383838;
+    
+}
+
+.oparator{
+    background-color: rgb(236, 111, 9);
+}
+
+.clear,.percent,.sign{
+    background-color: steelblue;
+}
+
+.equals{
+    background-color: green;
+}
+
+.back-space{
+    background-color: red;
+}
