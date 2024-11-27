@@ -13,6 +13,7 @@
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .container{
@@ -22,7 +23,7 @@
     display: grid;
     grid-template-columns: repeat(4 , 100px);
     grid-template-rows: minmax(80px,100px) repeat(6, 80px) ;
-    /* box-shadow: 20px 20px rgba(20, 0, 0, 0.3px); */
+    
     gap: 5px;
 }
 
@@ -61,7 +62,11 @@
     font-size: 25px;
     color: #fff;
     background-color: #383838;
-    
+    cursor: pointer;
+}
+
+.btn:hover{
+    filter: brightness(1.2);
 }
 
 .oparator{
