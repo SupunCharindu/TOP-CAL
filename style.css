@@ -1,30 +1,38 @@
 *{
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
 }
 
-
+body{
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
 
 .cal{
-    background-color: antiquewhite;
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 75vh; */
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
 }
 
 .container{
-    background-color: black;
+    background: #2c3e50;
     border: 10px solid rgba(0, 0, 0, 0.361);
-    border-radius: 5px;
+    border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(4 , 100px);
     grid-template-rows: minmax(80px,100px) repeat(6, 80px) ;
-    
-    gap: 5px;
+    padding: 5px;
+    gap: 3px;
 }
 
 .heading{
@@ -33,13 +41,14 @@
     grid-column: 1/ 5;
     font-size: 40px;
     text-align: center;
-    color: rgba(221, 190, 88, 0.937);
+    color: rgba(238, 238, 238, 0.937);
     
 }
 
 #display{
     grid-column: 1 /-1;
-    background-color: antiquewhite;
+    background: #34495e;
+    color: #fff;;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -56,7 +65,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1px;
+    margin: 3px;
     border-radius: 5px;
     border: none;
     font-size: 25px;
