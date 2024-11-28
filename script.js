@@ -45,6 +45,8 @@ const deleteButton = document.querySelector('.back-space');
 const clearButton = document.querySelector('.clear');
 const pointButton = document.querySelector('.decimal');
 const equalsButton = document.querySelector('.equals');
+const percentageButton = document.querySelector('.percentage');
+const signButton = document.querySelector('.sign')
 const display = document.getElementById('display');
 document.addEventListener('keydown', handleKeyboardInput);
 
@@ -63,6 +65,8 @@ operatorButtons.forEach((button) =>
     button.addEventListener('click', () => setOperation(button.textContent))
 );
 
+percentageButton.addEventListener('click', calculatePercentage);
+signButton.addEventListener('click', toggleSign);
 equalsButton.addEventListener('click', evaluate);
 clearButton.addEventListener('click', clear);
 deleteButton.addEventListener('click', deleteNumber);
@@ -133,13 +137,30 @@ function evaluate() {
     shouldResetScreen = true; // Set flag to clear screen for new input
 }
 
+function calculatePercentage() {
+    if (display.textContent === '' || isNaN(display.textContent)) return; // Guard clause
+    display.textContent = parseFloat(display.textContent) / 100;
+    shouldResetScreen = true; // Prepare for new input
+}
 
+function toggleSign() {
+    if (display.textContent === '' || isNaN(display.textContent)) return; // Guard clause
+    display.textContent = parseFloat(display.textContent) * -1;
+}
+
+
+
+
+//keyboard input
 function handleKeyboardInput(e) {
     if (e.key >= 0 && e.key <= 9) appendNumber(e.key)
     if (e.key === '.') appendPoint()
     if (e.key === '=' || e.key === 'Enter') evaluate()
     if (e.key === 'Backspace') deleteNumber()
     if (e.key === 'c') clear()
+    if (e.key === '%') calculatePercentage()
+    if (e.key === 's' || (event.shiftKey && key.toLowerCase() === 's')) 
+            toggleSign();
     if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/')
       setOperation(convertOperator(e.key))
   }
